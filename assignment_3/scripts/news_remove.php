@@ -1,4 +1,3 @@
-2022-05-23 | X
 <?php
 if (isset($_POST['article_id'])){
 // Read articles
