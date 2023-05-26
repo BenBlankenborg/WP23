@@ -76,9 +76,9 @@ $(function() {
         checkResidence();
     });
 // Check all fields on submit
-    $('#submit').click(function () {
+   $('#sub').click(function () {
         if (checkName() && checkAge() && checkMail() && checkResidence()){
-            $('form').submit()
-        }
+            $('form').submit();
+
     })
 });

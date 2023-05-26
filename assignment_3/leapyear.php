@@ -90,7 +90,7 @@ if (isset($_POST['name'])) {
 
 
 
-<form action ="" method="post">
+<form action="" method="post">
     <div class="form-row">
         <div class="col-md-6 mb-3">
             <label for="name">Name</label>
@@ -135,7 +135,7 @@ if (isset($_POST['name'])) {
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" id="submit">Submit form</button>
+    <button class="btn btn-primary" id="sub" type="button">Submit form</button>
 </form>
 
 <?php
