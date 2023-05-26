@@ -1,3 +1,41 @@
+<?php
+/* Header */
+$page_title = 'Webprogramming Assignment 3';
+$navigation = Array(
+    'active' => 'News',
+    'items' => Array(
+        'News' => '/WP23/assignment_3/index.php',
+        'Add news item' => '/WP23/assignment_3/news_add.php',
+        'Leap Year' => '/WP23/assignment_3/leapyear.php',
+        'Simple Form' => '/WP23/assignment_3/simple_form.php'
+    )
+);
+include __DIR__ . '/tpl/head.php';
+include __DIR__ . '/tpl/body_start.php';
+
+if (isset($_POST['id'])) {
+// Read articles
+    $json_file = file_get_contents("data/articles.json");
+    $articles = json_decode($json_file, true);
+    $articles = array_reverse($articles);
+// Get article information
+    $article_id = '';
+    $article_title = '';
+    $article_txt = '';
+    foreach ($articles as $key => $value) {
+        if ($value['id'] == $_POST['id']) {
+            $article_id = $value['id'];
+            $article_title = $value['title'];
+            $article_txt = $value['article'];
+        }
+    }
+} else {
+    $article_id = '';
+    $article_title = '';
+    $article_txt = '';
+}
+?>
+
 <div class="pd-40"></div>
 <div class="row">
     <div class="col-md-12">
@@ -16,22 +54,7 @@
     </div>
 </div>
 
+
 <?php
-if (isset($_POST['id'])){
-// Read articles
-    $json_file = file_get_contents("data/articles.json");
-    $articles = json_decode($json_file, true);
-    $articles = array_reverse($articles);
-// Get article information
-    $article_id = '';
-    $article_title = '';
-    $article_txt = '';
-    foreach($articles as $key => $value){
-        if ($value['id'] == $_POST['id']){
-            $article_id = $value['id'];
-            $article_title = $value['title'];
-            $article_txt = $value['article'];
-        }
-    }
-}
+include __DIR__ . '/tpl/body_end.php';
 ?>
