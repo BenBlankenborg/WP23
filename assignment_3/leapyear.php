@@ -12,7 +12,7 @@ $navigation = Array(
 );
 include __DIR__ . '/tpl/head.php';
 ?>
-
+<script type="application/javascript" src="scripts/leapyear.js"></script>
 <?php
 include __DIR__ . '/tpl/body_start.php';
 
@@ -94,7 +94,7 @@ if (isset($_POST['name'])) {
     <div class="form-row">
         <div class="col-md-6 mb-3">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name">
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -104,7 +104,7 @@ if (isset($_POST['name'])) {
         </div>
         <div class="col-md-6 mb-3">
             <label for="age">Age</label>
-            <input type="number" class="form-control" id="age" name="age" required>
+            <input type="number" class="form-control" id="age" name="age">
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -116,7 +116,7 @@ if (isset($_POST['name'])) {
     <div class="form-row">
         <div class="col-md-6 mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email">
             <div class="invalid-feedback">
                 Please provide a valid email adress.
             </div>
@@ -126,7 +126,7 @@ if (isset($_POST['name'])) {
         </div>
         <div class="col-md-6 mb-3">
             <label for="place">Place of residence</label>
-            <input type="text" class="form-control" id="place" name="place" required>
+            <input type="text" class="form-control" id="place" name="place">
             <div class="invalid-feedback">
                 Please provide a valid place name.
             </div>
