@@ -10,6 +10,14 @@ function print_latest_news() {
     });
 }
 
+function removeArticle(rm_btn) {
+    let article_id = $(rm_btn).data('article-id');
+    let rm_article = $.post("scripts/news_remove.php", {article_id: article_id});
+    rm_article.done(function (data) {
+        print_latest_news();
+    });
+}
+
 $(function() {
     print_latest_news();
     window.setInterval(function () {
